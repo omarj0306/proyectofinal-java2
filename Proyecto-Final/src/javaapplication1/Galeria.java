@@ -19,7 +19,7 @@ public class Galeria {
         Imagencita a1=new Imagencita ();
         a1.setUrl("/javaapplication1/ima1.png");
         a1.setTitulo("El logo de asus");
-        a1.setDescripcion("este es el logo tipo que pertenece a ala +"
+        a1.setDescripcion("este es el logo tipo que pertenece a ala "
                 + "empresa asus dedicada a graficos de juegos ");
         
         
@@ -37,7 +37,7 @@ public class Galeria {
         Imagencita a4=new Imagencita ();
         a4.setUrl("/javaapplication1/ima4.png");
         a4.setTitulo("El Auto Deseado");
-        a4.setDescripcion("Este el auto de ultimo modelo de modelo 2015 +"
+        a4.setDescripcion("Este el auto de ultimo modelo de modelo 2015 "
                 + "con una potencia en Ph ");
         
         Imagencita a5=new Imagencita ();

@@ -30,19 +30,20 @@ public class Carrucel extends javax.swing.JFrame {
                 int i=0;
                   
               while(true){
-                  if(i>=5)i=0;
+                  if(i>=g.leerTodas().size())i=0;
+                  
                   jLabel1.setText(g.leerTodas().get(i).getTitulo());
                   System.out.println(g.leerTodas().get(i).getUrl());
                   ImageIcon icon=new ImageIcon(g.leerTodas().get(i).getUrl());
-                  jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource(g.leerTodas().get(i).getUrl())));
+                  jLabel2.setIcon(icon);//(new javax.swing.ImageIcon(getClass().getResource(g.leerTodas().get(i).getUrl())));
                   jTextArea1.setText(g.leerTodas().get(i).getDescripcion());
                   try {
-                      Thread.sleep(3000);
+                      Thread.sleep(2000);
                   } catch (InterruptedException ex) {         
                   }
                 
                   i++;
-              } 
+              }
             }
             
         });
@@ -69,6 +70,8 @@ public class Carrucel extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 102, 102));
         jLabel1.setText("jLabel1");
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\HACKEER\\Documents\\NetBeansProjects\\omar\\proyectofinal-java2\\Proyecto-Final\\src\\javaapplication1\\ima1.png")); // NOI18N
 
         jTextArea1.setBackground(new java.awt.Color(204, 255, 204));
         jTextArea1.setColumns(20);
