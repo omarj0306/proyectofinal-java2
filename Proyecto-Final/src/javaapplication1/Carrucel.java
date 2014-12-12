@@ -6,8 +6,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import javax.swing.JFileChooser;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 
 
 /**
@@ -30,10 +32,12 @@ public class Carrucel extends javax.swing.JFrame {
               while(true){
                   if(i>=5)i=0;
                   jLabel1.setText(g.leerTodas().get(i).getTitulo());
+                  System.out.println(g.leerTodas().get(i).getUrl());
+                  ImageIcon icon=new ImageIcon(g.leerTodas().get(i).getUrl());
                   jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource(g.leerTodas().get(i).getUrl())));
                   jTextArea1.setText(g.leerTodas().get(i).getDescripcion());
                   try {
-                      Thread.sleep(6000);
+                      Thread.sleep(3000);
                   } catch (InterruptedException ex) {         
                   }
                 
@@ -144,7 +148,18 @@ public class Carrucel extends javax.swing.JFrame {
             JFileChooser choser=new JFileChooser();
            choser.showOpenDialog(this);
         File f=   choser.getSelectedFile();
-                                     
+        String archivo = f.getAbsolutePath().replace("\\", "\\\\");
+        try{
+            Imagencita img =new Imagencita("Nueva Imagen Encontrada",archivo,"Aquí se Encontrara la descripcion de la nueva imagen, donde se describiran sus datos Principales.");
+            ArrayList<Imagencita> lista=g.leerTodas();
+            lista.add(img);
+            g.setImagenes(lista);
+            
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+       
+       
+        }                             
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

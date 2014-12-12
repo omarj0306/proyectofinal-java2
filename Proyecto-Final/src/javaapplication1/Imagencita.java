@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 package javaapplication1;
-
+import java.io.Serializable;
 /**
  *
  * @author T107
  */
-public class Imagencita {
+public class Imagencita implements Serializable{
     private String titulo;
     private String url;
     private String descripcion;
@@ -45,6 +45,11 @@ public class Imagencita {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    @Override
+    public String toString() {
+        return "Imagencita{" + "titulo=" + titulo + ", url=" + url + ", descripcion=" + descripcion + '}';
     }
     
     
